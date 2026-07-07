@@ -3,9 +3,12 @@ class Solution {
         int mid = nums.length / 2;
         int cnt = 0;
         for (int i = 0; i < nums.length; i++) {
-            if(nums[i] == nums[mid]) cnt++;
+            if (nums[i] == nums[mid])
+                cnt++;
         }
-        if(cnt>1) return false;
-        else return true;
+        if (cnt > 1)
+            return false;
+        else
+            return true;
     }
 }
