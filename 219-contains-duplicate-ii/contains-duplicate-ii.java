@@ -10,10 +10,8 @@ class Solution {
         while (i < n) {
             if (i - k - 1 >= 0 && i - k - 1 < n)
                 values.remove(nums[i - k - 1]);
-            if (values.contains(nums[i])) {
+            if (!values.add(nums[i++]))
                 return true;
-            }
-            values.add(nums[i++]);
         }
         return false;
     }
