@@ -6,15 +6,10 @@ class Solution {
 
         Set<Integer> values = new HashSet<>();
         int i = 0;
-        for (; i < k + 1 && i < n; i++) {
-            if (values.contains(nums[i])) {
-                return true;
-            } else
-                values.add(nums[i]);
-        }
 
         while (i < n) {
-            values.remove(nums[i - k - 1]);
+            if (i - k - 1 >= 0 && i - k - 1 < n)
+                values.remove(nums[i - k - 1]);
             if (values.contains(nums[i])) {
                 return true;
             }
