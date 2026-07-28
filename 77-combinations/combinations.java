@@ -12,11 +12,10 @@ class Solution {
             ans.add(new ArrayList<>(curr));
             return;
         }
-        if (start > n)
-            return;
-        curr.add(start);
-        btCombine(start + 1, n, k - 1, curr);
-        curr.remove(curr.size() - 1);
-        btCombine(start + 1, n, k, curr);
+        for (int i = start; i <= n; i++) {
+            curr.add(i);
+            btCombine(i + 1, n, k - 1, curr);
+            curr.remove(curr.size() - 1);
+        }
     }
 }
