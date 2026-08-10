@@ -1,15 +1,19 @@
-
 class Solution {
-    Map<Integer, Integer> t = new HashMap<>();
-
     public int climbStairs(int n) {
+        int[] t = new int[n + 1];
+        Arrays.fill(t, -1);
+        return solve(n, t);
+    }
+
+    int solve(int n, int[] t) {
         if (n <= 2) {
             return n;
         }
-        if (t.containsKey(n)) {
-            return t.get(n);
+        if (t[n] != -1) {
+            return t[n];
         }
-        t.put(n, climbStairs(n - 1) + climbStairs(n - 2));
-        return t.get(n);
+        t[n] = solve(n - 1, t) + solve(n - 2, t);
+        return t[n];
+
     }
 }
