@@ -1,7 +1,10 @@
-public class Solution {
+
+class Solution {
     public int reverse(int x) {
-        final int MIN = -2147483648; // -2^31
-        final int MAX = 2147483647; // 2^31 - 1
+//        final int MIN = -2147483648; // -2^31
+        final int MIN = Integer.MIN_VALUE; // -2^31
+//        final int MAX = 2147483647; // 2^31 - 1
+        final int MAX = Integer.MAX_VALUE; // 2^31 - 1
 
         int res = 0;
         while (x != 0) {
