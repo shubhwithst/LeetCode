@@ -2,9 +2,6 @@ class Solution {
     public int coinChange(int[] coins, int amount) {
         int n = coins.length, x = (int) 1e9 - 1;
         int[][] t = new int[n + 1][amount + 1];
-        for (int[] row : t) {
-            Arrays.fill(row, -1);
-        }
         t[0][0] = x;
         for (int i = 1; i < amount + 1; i++) {
             t[0][i] = x;
